@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $(/usr/local/bin/solunar -c CITY --syslocal | grep 'Sunrise\|Sunset' | grep -Eo '[0-9]' | tr -d '\n' | grep -Eo '[0-9]{4,4}')
+echo $(/usr/bin/solunar -c Berlin --syslocal | grep 'Sunrise\|Sunset' | grep -Eo '[0-9]' | tr -d '\n' | grep -Eo '[0-9]{4,4}')

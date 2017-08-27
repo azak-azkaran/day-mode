@@ -1,23 +1,24 @@
 #!/bin/bash
-# export DBUS_SESSION_BUS_ADDRESS environment variable because cron hates me
-PID=$(pgrep -o gnome-session -u "USER")
-export DBUS_SESSION_BUS_ADDRESS=$(sudo grep -z DBUS_SESSION_BUS_ADDRESS /proc/$PID/environ|cut -d= -f2-)
+
 TIME="$(date '+%H%M')"
 echo "The current time is $TIME"
 
-CIVS="$(/usr/local/bin/find-twilight | cut -f1 -d\ )"
-CIVE="$(/usr/local/bin/find-twilight | cut -f2 -d\ )"
+dbus-launch
+
+CIVS="$(/home/azak/git/day-mode/find-twilight | cut -f1 -d\ )"
+CIVE="$(/home/azak/git/day-mode/find-twilight | cut -f2 -d\ )"
 echo "Daylight starts at $CIVS ends at $CIVE"
 if [ $TIME -ge $CIVS ] && [ $TIME -le $CIVE ] ; then
 	echo "Switching to Day mode"
-	RESP=exec /usr/local/bin/day-mode
+	RESP=exec /home/azak/git/day-mode/day-mode
 else
 	echo "Switching to Night mode"
-	RESP=exec /usr/local/bin/night-mode
+	RESP=exec /home/azak/git/day-mode/night-mode
 fi
 
 if [[ $RESP ]] ; then
 	echo "Switch failure"
 else
 	echo "Switch sucess"
+        echo "set to: $DAY_MODE"
 fi
