@@ -11,3 +11,10 @@ Minute   Hour   Day of Month       Month          Day of Week        Command
  (0-59)  (0-23)     (1-31)    (1-12 or Jan-Dec)  (0-6 or Sun-Sat)
     *       *           *               *               *           /home/azak/git/day-mode/day-night-cycle > /home/azak/git/day-mode/log
 ```
+## dependencies
+
+solunar for finding day night switch: 
+https://github.com/kevinboone/solunar_cmdline
+
+gnome terminal solarized for profile switch:
+https://github.com/Anthony25/gnome-terminal-colors-solarized
