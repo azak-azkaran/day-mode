@@ -5,6 +5,6 @@
 /usr/bin/gsettings set org.gnome.shell.extensions.user-theme name 'Flat-Plat-Light'
 /usr/bin/gsettings set org.gnome.desktop.background picture-uri 'file:///home/azak/Pictures/tokyo_street_by_arsenixc.jpg'
 
-
-source /home/azak/git/day-mode/check_readlink.sh  /home/azak/.config/terminator/config /home/azak/.config/terminator/config_light
 source /home/azak/git/day-mode/check_readlink.sh  /home/azak/.vimrc /home/azak/.vimrc_light
+dbus-launch printf '1\nyes\n' | /home/azak/git/gnome-terminal-colors-solarized/install.sh -s light --skip-dircolors
+

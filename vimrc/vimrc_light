@@ -22,6 +22,11 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'DoxygenToolkit.vim'
 Plugin 'taglist.vim'
 
+" ack as search program: 
+" Usage
+" :Ack [options] {pattern} [{directories}]
+Plugin 'mileszs/ack.vim' 
+
 " python sintax highlighting
 Plugin 'scrooloose/syntastic'  
 
@@ -128,10 +133,10 @@ if bla ==? "tex"
     let g:LatexBox_latexmk_async=1
     let g:LatexBox_latexmk_preview_continously=1
     map <F3> :LatexTOCToggle<CR>
+    map <F7> :Latexmk<CR> 
+    map <leader>v :LatexView<CR>
 endif
 
-map <F7> :Latexmk<CR> 
-map <leader>v :LatexView<CR>
 
 " Toggle spell checking on and off with `,s`
 map <leader>s :set spell!<CR>
@@ -146,13 +151,6 @@ set spelllang=en_us
 " YCM stuff
 let g:ycm_extra_conf_globlist = ['~/workspace/*']
 
-" Geekbench
-noremap <F8> :Geeknote<cr>
-let g:GeeknoteFormat="markdown"
-noremap <F8> :Geeknote<CR>
-
-" Powerline stuff
-"set laststatus=2
 " vim airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_idx_mode = 1
@@ -169,6 +167,14 @@ nmap <leader>7 <Plug>AirlineSelectTab7
 nmap <leader>8 <Plug>AirlineSelectTab8
 nmap <leader>9 <Plug>AirlineSelectTab9
 
+" set silver searcher as search program
+if executable('ag')
+    let g:ackprg = 'ag --vimgrep'
+endif
+
+" Run Vimux
+noremap <F8> :VimuxRunLastCommand<CR>
+noremap <F7> :VimuxPromptCommand<CR>
 
 " solarized
 set background=light

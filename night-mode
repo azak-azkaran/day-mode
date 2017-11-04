@@ -5,6 +5,5 @@
 /usr/bin/gsettings set org.gnome.desktop.wm.preferences theme 'Flat-Plat-Dark'
 /usr/bin/gsettings set org.gnome.desktop.background picture-uri 'file:///home/azak/Pictures/tokyo_street_night_by_arsenixc.jpg'
 
-source /home/azak/git/day-mode/check_readlink.sh  /home/azak/.config/terminator/config /home/azak/.config/terminator/config_dark
 source /home/azak/git/day-mode/check_readlink.sh  /home/azak/.vimrc /home/azak/.vimrc_dark
-
+dbus-launch printf '1\nyes\n' | /home/azak/git/gnome-terminal-colors-solarized/install.sh -s dark --skip-dircolors

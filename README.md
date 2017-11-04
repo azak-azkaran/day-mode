@@ -7,9 +7,10 @@ I am using it the day and night check file with a cron job.
 My crontab file looks as follows:
 
 ```
-Minute   Hour   Day of Month       Month          Day of Week        Command
- (0-59)  (0-23)     (1-31)    (1-12 or Jan-Dec)  (0-6 or Sun-Sat)
-    *       *           *               *               *           /home/azak/git/day-mode/day-night-cycle > /home/azak/git/day-mode/log
+#Minute   Hour   Day of Month       Month          Day of Week        Command
+#(0-59)  (0-23)     (1-31)    (1-12 or Jan-Dec)  (0-6 or Sun-Sat)
+   *       *           *               *               *           /home/azak/git/day-mode/day-night-cycle > /home/azak/git/day-mode/log 2>&1
+
 ```
 ## dependencies
 
